@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aquarium</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+<header>
+
+		<a href="index.html" id="logo"></a>
+
+		<nav>
+
+
+			<ul>
+
+				<li><a href="index.html" >Home</a></li>
+				<li><a href="Vissen.html">Vissen</a></li>
+				<li><a href="Verlichting.html">Verlichting</a></li>
+                <li><a href="Temperatuur.html">Temperatuur</a></li>
+				<li><a href="Filter.html">Filter</a></li>
+                <li><a href="Aquariums.html"class="current">Aquarium</a> </li>
+
+			</ul>
+
+		</nav>
+
+	</header>
+
+<div class="content3" >
+<br><h3>Aquarium</h3><br>
+Selecteer een bestaand aquarium<br><br>
+<select name="aquariums">
+    <option value="Tropical">Tropical</option>
+</select><br><br>
+<form>
+<p class="submit"><input type="submit" name="Selecteer" value="Selecteer"></p>
+</form>
+    <div class="AquariumOpties">
+<div class="AquariumToevoegen">
+    Voeg een aquarium toe<br><br>
+ <form method="post" action="index.html">
+        <p><input type="text" name="Naam" value="" placeholder="Naam"></p>
+        <p><input type="text" name="ip" value="" placeholder="Ip-adres"></p>
+        <p class="submit"><input type="submit" name="VoegToe" value="Voeg Toe"></p>
+ </form><br></div>
+    <div class="AquariumVerwijderen">
+    Verwijder een aquarium<br><br>
+        <select name="aquariums">
+            <option value="Tropical">Tropical</option>
+        </select><br><br>
+        <form>
+        <p class="submit"><input type="submit" name="Verwijder" value="Verwijder"></p>
+        </form>
+</div>
+</div>
+</div>
+</body>
+</html>
