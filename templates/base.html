@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="Nederlands">
+
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    <meta name="description" content="Dit is een website voor het gebruik en onderhoud van u aquarium.">
+
+	<meta name="author" content="Perrine De Brabant">
+
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+
+    <title>Smartfish - {% block title %}
+    {% endblock %}
+    </title>
+</head>
+<body>
+
+    <header>
+
+		<a href="index.html" id="logo"></a>
+
+		<nav>
+
+
+			<ul>
+
+				<li><a href="index.html" {% block Home %}{% endblock %}>Home</a></li>
+				<li><a href="Vissen.html" {% block Vissen %}{% endblock %}>Vissen</a></li>
+				<li><a href="Verlichting.html" {% block Verlichting %}{% endblock %}>Verlichting</a></li>
+				<li><a href="Filter.html" {% block Filter %}{% endblock %}>Filter</a></li>
+				<li><a href="Temperatuur.html" {% block Temperatuur %}{% endblock %}>Temperatuur</a></li>
+				<li><a href="Aquariums.html" {% block Aquarium%}{% endblock %}>Aquarium</a> </li>
+
+			</ul>
+
+		</nav>
+
+	</header>
+
+{% block body %}
+
+{% endblock %}
+
+
+	<footer class="footer-distributed">
+
+
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="index.html">Home</a>
+					<a href="Onboarding.html">Vissen</a>
+					<a href="Verlichting.html">Verlichting</a>
+					<a href="Temperatuur.html">Temperatuur</a>
+					<a href="Filter.html">Filter</a>
+                    <a href="Aquariums.html">Aquarium</a>
+				</p>
+
+				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>
+			</div>
+
+	</footer>
+
+
+</body>
+</html>

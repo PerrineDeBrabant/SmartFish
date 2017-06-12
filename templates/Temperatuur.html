@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Temperatuur</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-<body>
-<header>
-
-		<a href="index.html" id="logo"></a>
-
-		<nav>
-
-
-			<ul>
-
-				<li><a href="index.html" >Home</a></li>
-				<li><a href="Vissen.html">Vissen</a></li>
-                <li><a href="Verlichting.html">Verlichting</a></li>
-                <li><a href="Temperatuur.html" class="current">Temperatuur</a></li>
-				<li><a href="Filter.html">Filter</a></li>
-                <li><a href="Aquariums.html">Aquarium</a> </li>
-
-
-			</ul>
-
-		</nav>
-
-	</header>
+{% extends "base.html" %}
+{% block title %}
+    Temperatuur
+{% endblock %}
+{% block Temperatuur %}
+    class="current"
+{% endblock %}
+{% block body %}
 <div class="container">
 <div class="Verwarming"><br>
     <h3>Verwarming</h3><br><br>
@@ -49,7 +26,7 @@
      Gewenste temperatuur: 23°C<br><br><br>
     <div class="VerwarmingStatus">
         <div class="fotoTemp"><br>
-            <img src="img/temprature.png" height="256" width="256"/>
+            <img src="/static/images/temprature.png" height="256" width="256"/>
         </div>
         <div class="infoTemp"><br>
             <form>
@@ -59,23 +36,5 @@
         </div>
 	</div>
 </div>
-<footer class="footer-distributed">
-
-
-
-			<div class="footer-left">
-
-				<p class="footer-links">
-					<a href="#">Home</a>
-					<a href="#">Vissen</a>
-					<a href="#">Verlichting</a>
-					<a href="#">Temperatuur</a>
-					<a href="#">Filter</a>
-				</p>
-
-				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>
-			</div>
-
-	</footer>
-</body>
-</html>
+</div>
+{% endblock %}

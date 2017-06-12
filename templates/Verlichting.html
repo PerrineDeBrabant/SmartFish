@@ -1,33 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Verlichting</title>
-	<link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header>
+{% extends "base.html" %}
+{% block title %}
+    Verlichting
+{% endblock %}
+{% block Verlichting %}
+    class="current"
+{% endblock %}
+{% block body %}
 
-		<a href="index.html" id="logo"></a>
-
-		<nav>
-
-
-			<ul>
-
-				<li><a href="index.html" >Home</a></li>
-				<li><a href="Vissen.html">Vissen</a></li>
-				<li><a href="Verlichting.html" class="current">Verlichting</a></li>
-                <li><a href="Temperatuur.html">Temperatuur</a></li>
-				<li><a href="Filter.html">Filter</a></li>
-                <li><a href="Aquariums.html">Aquarium</a> </li>
-
-
-			</ul>
-
-		</nav>
-
-	</header>
 <div class="container">
 <div class="colorpicker"><br>
 	<h3>Kleur</h3><br><br>
@@ -42,29 +21,10 @@
 </div>
 	<div class="Schakelaar"><br>
 	<h3>Verlichting</h3><br><br>
-		<img src="img/lamp.png" height="200" width="200"/><br><br>
+		<img src="/static/images/lamp.png" height="200" width="200"/><br><br>
 		 toestand<br><br>
 		AAN<br><br>
 		<a href="#fakeLink" class="btn orange">On/off</a>
 	</div>
 </div>
-<footer class="footer-distributed">
-
-
-
-			<div class="footer-left">
-
-				<p class="footer-links">
-					<a href="#">Home</a>
-					<a href="#">Vissen</a>
-					<a href="#">Verlichting</a>
-					<a href="#">Temperatuur</a>
-					<a href="#">Filter</a>
-				</p>
-
-				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>
-			</div>
-
-	</footer>
-</body>
-</html>
+{% endblock %}

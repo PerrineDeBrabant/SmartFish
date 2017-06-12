@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vissen</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<header>
-
-		<a href="index.html" id="logo"></a>
-
-		<nav>
-
-
-			<ul>
-
-				<li><a href="index.html" >Home</a></li>
-				<li><a href="Vissen.html"class="current">Vissen</a></li>
-				<li><a href="Verlichting.html">Verlichting</a></li>
-                <li><a href="Temperatuur.html">Temperatuur</a></li>
-				<li><a href="Filter.html">Filter</a></li>
-                <li><a href="Aquariums.html">Aquarium</a> </li>
-
-
-			</ul>
-
-		</nav>
-
-	</header>
-
+{% extends "base.html" %}
+{% block title %}
+    Vissen
+{% endblock %}
+{% block Vissen %}
+    class="current"
+{% endblock %}
+{% block body %}
 
 <div class="contentVissen">
 	List <br><br>
@@ -38,23 +15,4 @@
      <p>Soort:<input type="text" name="login" value="" placeholder="Soort"></p>
      <p><input type="submit" name="commit" value="Voeg toe"></p>
 </form></div>
-<footer class="footer-distributed">
-
-
-
-			<div class="footer-left">
-
-				<p class="footer-links">
-					<a href="#">Home</a>
-					<a href="#">Vissen</a>
-					<a href="#">Verlichting</a>
-					<a href="#">Temperatuur</a>
-					<a href="#">Filter</a>
-				</p>
-
-				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>
-			</div>
-
-	</footer>
-</body>
-</html>
+{% endblock %}

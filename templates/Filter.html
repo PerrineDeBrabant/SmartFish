@@ -1,58 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Filter</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-<body>
-	<header>
-
-		<a href="index.html" id="logo"></a>
-
-		<nav>
-
-
-			<ul>
-
-				<li><a href="index.html" class="current">Home</a></li>
-				<li><a href="Vissen.html">Vissen</a></li>
-				<li><a href="Verlichting.html">Verlichting</a></li>
-				<li><a href="Filter.html">Filter</a></li>
-				<li><a href="Temperatuur.html">Temperatuur</a></li>
-				<li><a href="Aquariums.html">Aquarium</a> </li>
-
-			</ul>
-
-		</nav>
-
-	</header>
+{% extends "base.html" %}
+{% block title %}
+    Home
+{% endblock %}
+{% block Filter %}
+    class="current"
+{% endblock %}
+{% block body %}
 <div class="Filter"><br>
 	<h3>Filter</h3><br><br>
 
-	<img src="img/bubbles.png" height="436" width="600"/><br><br>
+	<img src="/static/images/bubbles.png" height="436" width="600"/><br><br>
 		 toestand<br><br>
 		AAN<br><br>
 		<a href="#fakeLink" class="btn orange">On/off</a>
 	</div>
-<footer class="footer-distributed">
-
-
-
-			<div class="footer-left">
-
-				<p class="footer-links">
-					<a href="#">Home</a>
-					<a href="#">Vissen</a>
-					<a href="#">Verlichting</a>
-					<a href="#">Temperatuur</a>
-					<a href="#">Filter</a>
-				</p>
-
-				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>
-			</div>
-
-	</footer>
-</body>
-</html>
+{% endblock %}
