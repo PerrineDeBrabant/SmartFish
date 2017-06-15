@@ -17,7 +17,7 @@
 <body>
 
     <header>
-
+{#        Maak een logo aan en vervang deze regels overal#}
 		<a href="index.html" id="logo"></a>
 
 		<nav>
@@ -25,12 +25,14 @@
 
 			<ul>
 
-				<li><a href="index.html" {% block Home %}{% endblock %}>Home</a></li>
-				<li><a href="Vissen.html" {% block Vissen %}{% endblock %}>Vissen</a></li>
-				<li><a href="Verlichting.html" {% block Verlichting %}{% endblock %}>Verlichting</a></li>
-				<li><a href="Filter.html" {% block Filter %}{% endblock %}>Filter</a></li>
-				<li><a href="Temperatuur.html" {% block Temperatuur %}{% endblock %}>Temperatuur</a></li>
-				<li><a href="Aquariums.html" {% block Aquarium%}{% endblock %}>Aquarium</a> </li>
+				<li><a href="{{ url_for('home')}}" {% block Home %}{% endblock %}>Home</a></li>
+				<li><a href="{{ url_for('vissen')}}" {% block Vissen %}{% endblock %}>Vissen</a></li>
+				<li><a href="{{ url_for('verlichting')}}" {% block Verlichting %}{% endblock %}>Verlichting</a></li>
+				<li><a href="{{ url_for('filter')}}"{% block Filter %}{% endblock %}>Filter</a></li>
+				<li><a href="{{ url_for('temperatuur')}}" {% block Temperatuur %}{% endblock %}>Temperatuur</a></li>
+				<li><a href="{{ url_for('aquariums')}}" {% block Aquarium%}{% endblock %}>Aquarium</a> </li>
+                <li><a href="{{ url_for('instellingen')}}" {% block Instellingen%}{% endblock %}>Instellingen</a> </li>
+                <li><a href="{{ url_for('onboarding')}}" >Logout</a> </li>
 
 			</ul>
 
@@ -41,7 +43,8 @@
 {% block body %}
 
 {% endblock %}
-
+{% block button %}
+    {% endblock %}
 
 	<footer class="footer-distributed">
 

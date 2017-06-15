@@ -6,11 +6,10 @@
     class="current"
 {% endblock %}
 {% block body %}
-  	<section>
-
+{#Pas de banner aan maak hem minder hoog en meer groen langs de zijkanten van dde banner.#}
         <img src="/static/images/banner.png" id="banner"/>
 
-	</section>
+
 	<div class="container">
 		<div class="block1"><br><h2>Temperatuur</h2><br>
 
@@ -35,10 +34,13 @@
 			<br><br></div>
 		</div>
     	<div class="block3">
-			<img src="/static/images/bubbles.png" height="200" width="300"/>
+        <h3>Filter</h3><br><br>
 
+            <img src="/static/images/bubbles.png" height="436" width="600"/><br><br>
+                 toestand<br><br>
+                AAN<br><br>
+                <a href="#fakeLink" class="btn orange">On/off</a>
+	    </div>
 		</div>
-
-	</div>
 
 {% endblock %}

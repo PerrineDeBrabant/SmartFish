@@ -59,7 +59,7 @@ header {
 	float: left;
 	width: 200px;
 	height: 40px;
-	background: url(../img/logo.png) no-repeat center;
+	background: url(../images/logo.png) no-repeat center;
 	display: block;
 
 }
@@ -93,9 +93,8 @@ li {
 }
 /*Home*/
 #banner{
-	width: 1024px;
-	margin: 0;
-	padding: 0;
+	width: 100%;
+	margin-top: 76px;
 
 }
 .container {
@@ -397,11 +396,11 @@ table tr td {
 	margin: auto;
 	width: 200px;
 	height: 40px;
-	background: url(../img/logo.png) no-repeat center;
+	background: url(../images/logo.png) no-repeat center;
 	display: block;
 }
 .background{
-	background: url(../img/background.png) no-repeat center;
+	background: url(../images/background.png) no-repeat center;
 }
 .container2 {
   margin: 80px auto;
