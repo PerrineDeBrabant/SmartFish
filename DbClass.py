@@ -43,23 +43,147 @@ class DbClass:
         self.__connection.commit()
         self.__cursor.close()
 
-    def standFilter(self):
+    def standFilter(self,value1):
         # Query zonder parameters
-        sqlQuery = "SELECT Filter FROM Aquarium WHERE AquariumNaam = 'Tropical'"
+        sqlQuery = "SELECT Filter FROM Aquarium WHERE AquariumNaam = '{param1}'"
+        sqlCommand = sqlQuery.format(param1=value1)
+
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def VeranderFilter(self,value1,value2):
+        sqlQuery = "UPDATE Aquarium SET Filter = '{param1}' WHERE AquariumNaam = '{param2}'"
+        # Combineren van de query en parameter
+        sqlCommand = sqlQuery.format(param1=value1,param2=value2)
+
+        self.__cursor.execute(sqlCommand)
+        self.__connection.commit()
+        self.__cursor.close()
+
+
+    def VeranderKleur(self,value1,value2):
+        sqlQuery = "UPDATE Aquarium SET Kleur = '{param1}' WHERE AquariumNaam = '{param2}'"
+        # Combineren van de query en parameter
+        sqlCommand = sqlQuery.format(param1=value1,param2=value2)
+
+        self.__cursor.execute(sqlCommand)
+        self.__connection.commit()
+        self.__cursor.close()
+
+    def HuidigeKleur(self,value1):
+        # Query zonder parameters
+        sqlQuery = "SELECT Kleur FROM Aquarium WHERE AquariumNaam = '{param1}'"
+        sqlCommand = sqlQuery.format(param1=value1)
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def standVerlichting(self,value1):
+        # Query zonder parameters
+        sqlQuery = "SELECT Verlichting FROM Aquarium WHERE AquariumNaam = '{param1}'"
+        sqlCommand = sqlQuery.format(param1=value1)
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def VeranderVerlichting(self, value1,value2):
+        sqlQuery = "UPDATE Aquarium SET Verlichting = '{param1}' WHERE AquariumNaam = '{param2}'"
+        # Combineren van de query en parameter
+        sqlCommand = sqlQuery.format(param1=value1,param2=value2)
+
+        self.__cursor.execute(sqlCommand)
+        self.__connection.commit()
+        self.__cursor.close()
+
+    def VoegVisToe(self,value1,value2,value3):
+        #  Query zonder parameters
+        sqlQuery = "INSERT INTO vis (Naam,Soort,aquarium_AquariumID) VALUES ('{param1}','{param2}','{param3}')"
+
+        sqlCommand = sqlQuery.format(param1=value1,param2=value2,param3=value3)
+
+        self.__cursor.execute(sqlCommand)
+        self.__connection.commit()
+        self.__cursor.close()
+
+    def VerwijderVis(self,value1):
+
+        sqlQuery = "Delete from vis where Naam = '{param1}'"
+
+        sqlCommand = sqlQuery.format(param1=value1)
+
+        self.__cursor.execute(sqlCommand)
+        self.__connection.commit()
+        self.__cursor.close()
+
+    def AquariumID(self,value1):
+        sqlQuery = "SELECT AquariumID FROM Aquarium WHERE AquariumNaam= '{param1}'"
+
+        sqlCommand = sqlQuery.format(param1=value1)
+
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def SoortVis(self):
+        sqlQuery = "SELECT DISTINCT Soort FROM vis ORDER BY Soort"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
         self.__cursor.close()
         return result
 
-    def VeranderFilter(self,value1):
-        sqlQuery = "UPDATE Aquarium SET Filter = '{param1}' WHERE AquariumNaam = 'Tropical'"
-        # Combineren van de query en parameter
-        sqlCommand = sqlQuery.format(param1=value1)
+    def VissenLijstje(self):
+        #  Query zonder parameters
+        sqlQuery = "SELECT Naam FROM vis "
+
+        self.__cursor.execute(sqlQuery)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def HaalVissenOp(self,voorwaarde):
+        #  Query zonder parameters
+        sqlQuery = "SELECT Naam FROM vis WHERE Soort='{param1}'"
+        sqlCommand = sqlQuery.format(param1=voorwaarde)
 
         self.__cursor.execute(sqlCommand)
-        self.__connection.commit()
+        result = self.__cursor.fetchall()
         self.__cursor.close()
+        return result
+
+    def Visjes(self, voorwaarde):
+        # Query met parameters
+        sqlQuery = "SELECT Naam FROM vis WHERE Soort= '{param1}'"
+
+        # Combineren van de query en parameter
+        sqlCommand = sqlQuery.format(param1=voorwaarde)
+
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def Aquariums(self):
+        sqlQuery = "SELECT DISTINCT AquariumNaam FROM Aquarium ORDER BY AquariumNaam"
+
+        self.__cursor.execute(sqlQuery)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def HuidigeTemperatuur(self,value1):
+        # Query zonder parameters
+        sqlQuery = "SELECT Temperatuur FROM Aquarium WHERE AquariumNaam = '{param1}'"
+        sqlCommand = sqlQuery.format(param1=value1)
+        self.__cursor.execute(sqlCommand)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
 
     def CheckAquarium(self,voorwaarde):
         # Query met parameters
@@ -72,6 +196,7 @@ class DbClass:
         result = self.__cursor.fetchall()
         self.__cursor.close()
         return result
+
 
     def GekozenAquarium(self, voorwaarde):
 
@@ -104,14 +229,6 @@ class DbClass:
         self.__connection.commit()
         self.__cursor.close()
 
-    def VeranderVerlichting(self, value1):
-        sqlQuery = "INSERT INTO Aquarium (Verlichting) VALUES ({param1})"
-        # Combineren van de query en parameter
-        sqlCommand = sqlQuery.format(param1=value1)
-
-        self.__cursor.execute(sqlCommand)
-        self.__connection.commit()
-        self.__cursor.close()
 
 
 
@@ -124,14 +241,7 @@ class DbClass:
         self.__cursor.execute(sqlCommand)
         self.__connection.commit()
         self.__cursor.close()
-    def HaalVissenOp(self):
-        #  Query zonder parameters
-        sqlQuery = "SELECT * FROM vissen ORDER BY Soort"
 
-        self.__cursor.execute(sqlQuery)
-        result = self.__cursor.fetchall()
-        self.__cursor.close()
-        return result
 
     # def getDataFromDatabase(self):
     #     # Query zonder parameters

@@ -1,0 +1,18 @@
+ {% extends "base.html" %}
+{% block title %}
+    Bekijk Vissen
+{% endblock %}
+{% block Vissen %}
+    class="current"
+{% endblock %}
+{% block body %}
+<div class="ToevoegenVis">
+
+    <br><h3>Vis Toevoegen</h3><br>
+    <form method="post">
+            Naam: <input type="text" name="NaamVis" placeholder="Naam vis"><br><br>
+            Soort: <input type="text" name="SoortVis" placeholder="Soort vis"><br><br>
+            <button class="btn knop1 circular">Toevoegen</button>
+    </form>
+</div>
+{% endblock %}

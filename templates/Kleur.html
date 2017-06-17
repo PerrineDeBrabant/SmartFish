@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+    Verlichting
+{% endblock %}
+{% block Verlichting %}
+    class="current"
+{% endblock %}
+{% block body %}
+<div class="colorpicker"><br>
+	<h3>Kleur</h3><br><br>
+	Selecteer een kleur: <br><br>
+	<form method="post">
+        <input type="color" name="kleur"><br><br>
+        <button class="btn knop1 circular">Verander</button>
+    </form>
+    <br>
+    <h3>Huidige kleur</h3><br>
+    <div class="kleur" style="background-color:{{ kleur }}">
+                </div>
+</div>
+
+
+{% endblock %}

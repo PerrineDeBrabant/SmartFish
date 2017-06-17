@@ -7,22 +7,28 @@
 {% endblock %}
 {% block body %}
 
-<div class="container">
-<div class="colorpicker"><br>
-	<h3>Kleur</h3><br><br>
-	Selecteer een kleur: <br>
-	<form>
-        <input type="color">
-    </form>
-	Huidig kleur:<br><br>
-	<div class="color"></div>
+{#<div class="colorpicker"><br>#}
+{#	<h3>Kleur</h3><br><br>#}
+{#	Selecteer een kleur: <br>#}
+{#	<form method="post">#}
+{#        <input type="color" name="kleur">#}
+{#        <button>Verander</button>#}
+{#    </form>#}
+{##}
+{##}
+{#</div>#}
+{#	<div class="Schakelaar"><br>#}
+{#	<h3>Verlichting</h3><br><br>#}
+{#		<img src="/static/images/lamp.png" height="200" width="200"/><br><br>#}
+{#		 toestand<br><br>#}
+{#		AAN<br><br>#}
+{#		<a href="#fakeLink" class="btn orange">On/off</a>#}
+{#	</div>#}
+<div class="VerlichtingKeuze">
+	<br>
+<h3>Verlichting</h3><br><br>
+  <a href="{{ url_for('Kleur') }}" class="btn knop1 circular">Kleur verlichting</a><br><br>
+    <a href="{{ url_for('LichtSchakelaar') }}" class="btn knop1 circular">Lichtschakelaar</a>
 </div>
-	<div class="Schakelaar"><br>
-	<h3>Verlichting</h3><br><br>
-		<img src="/static/images/lamp.png" height="200" width="200"/><br><br>
-		 toestand<br><br>
-		AAN<br><br>
-		<a href="#fakeLink" class="btn orange">On/off</a>
-	</div>
-</div>
+
 {% endblock %}

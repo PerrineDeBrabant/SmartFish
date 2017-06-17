@@ -11,35 +11,43 @@
 
 
 	<div class="container">
-		<div class="block1"><br><h2>Temperatuur</h2><br>
+		<div class="block1"><br><h2>Temperatuur</h2><br><br>
 
-			<img src="/static/images/temprature.png" height="180" width="150"/><br><br>
-
-			20°C<br><br>
+			<img src="/static/images/temprature.png" height="180" width="150"/><br><br><br>
+            <h3>Huidige Temperatuur</h3><br>
+			{{ huidig }}°C<br><br>
 
 		</div>
     	<div class="block2"><br><h2>Verlichting</h2><br>
 
-			<img src="/static/images/lamp.png" height="200" width="200"/><br><br>
+			<img src="/static/images/lamp.png" height="200" width="200"/><br>
             <div class="aanpassen">
-			<div class="kleurKeuze">
+			<div class="kleurKeuze"><br>
 				<h3>Kleur</h3><br>
-				<div class="kleur"></div>
+				<div class="kleur" style="background-color:{{ kleur }}">
+                </div>
 			</div>
 			<div class="verlichting">
-                    <h3>toestand</h3><br>
-					AAN<br>
-					<a href="#fakeLink" class="btn orange">On/off</a>
+                    <h3>Toestand</h3><br>
+					{% if stand==[(1,)] %}
+            AAN
+        {% elif stand==[(0,)] %}
+            UIT
+        {% endif %}<br>
+
 			</div>
 			<br><br></div>
 		</div>
-    	<div class="block3">
+    	<div class="block3"><br>
         <h3>Filter</h3><br><br>
 
             <img src="/static/images/bubbles.png" height="436" width="600"/><br><br>
-                 toestand<br><br>
-                AAN<br><br>
-                <a href="#fakeLink" class="btn orange">On/off</a>
+                 <h3>Toestand</h3><br>
+                {% if stand2==[(1,)] %}
+            AAN
+        {% elif stand2==[(0,)] %}
+            UIT
+        {% endif %}
 	    </div>
 		</div>
 

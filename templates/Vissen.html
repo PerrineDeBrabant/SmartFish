@@ -7,12 +7,24 @@
 {% endblock %}
 {% block body %}
 
-<div class="contentVissen">
-	List <br><br>
-<h3>Nieuwe vis</h3><br>
-<form>
-     <p>Naam:<input type="text" name="login" value="" placeholder="Naam"></p>
-     <p>Soort:<input type="text" name="login" value="" placeholder="Soort"></p>
-     <p><input type="submit" name="commit" value="Voeg toe"></p>
-</form></div>
+<div class="contentVissen"><br>
+	<h3>Bekijk vissen volgens soort</h3> <br><br>
+<form method="POST">
+    <select name="3">
+       {% for soort in soorten %}#}
+            <option>{{ soort[0] }}</option>
+        {% endfor %}
+
+   </select><br><br>
+<button class="btn knop1 circular">Kies</button>
+</form><br>
+<h3>Opties vissen</h3><br>
+
+<ul>
+    {% for vis in vissen %}
+        <li>{{ vis }}</li>
+    {% endfor %}
+</ul>
+ <a href="{{ url_for('VisToevoegen') }}" class="btn knop1 circular">Toevoegen</a><br><br>
+<a href="{{ url_for('VerwijderenVis') }}" class="btn knop1 circular">Verwijderen</a><br><br></div>
 {% endblock %}

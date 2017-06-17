@@ -1,0 +1,26 @@
+ {% extends "base.html" %}
+{% block title %}
+    Bekijk Vissen
+{% endblock %}
+{% block Vissen %}
+    class="current"
+{% endblock %}
+{% block body %}
+<div class="VerwijderenVis">
+
+    <br><h3>Vis Verwijderen</h3><br>
+     <form method="post" >
+        <select name="vissenLijst">
+               {% for vis in vissen %}#}
+                    <option>{{ vis[0] }}</option>
+                {% endfor %}
+
+           </select><br><br>
+<p class="submit"><input type="submit" name="Selecteer" value="Selecteer"></p>
+</form>
+{#    <form method="post">#}
+{#            Naam: <input type="text" name="NaamVis" placeholder="Naam vis"><br><br>#}
+{#            <button class="btn knop1 circular">Verwijderen</button>#}
+{#    </form>#}
+</div>
+{% endblock %}

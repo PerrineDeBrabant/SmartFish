@@ -45,7 +45,7 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-RED = 27
+RED = 17
 GREEN = 22
 BLUE = 24
 

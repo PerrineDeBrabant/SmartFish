@@ -2,14 +2,14 @@
 {% block title %}
     Home
 {% endblock %}
-{% block Filter %}
+{% block Verlichting %}
     class="current"
 {% endblock %}
 {% block body %}
-<div class="Filter"><br>
-	<h3>Filter</h3><br><br>
+<div class="Schakelaar"><br>
+	<h3>Verlichting</h3><br><br>
 
-	<img src="/static/images/bubbles.png" height="436" width="600"/><br><br>
+
 		 toestand<br><br>
 		{% if stand==[(1,)] %}
             AAN
@@ -18,11 +18,10 @@
         {% endif %}
     <form method="post">
         {% if stand==[(1,)] %}
-        <button name="1" value="0" class="btn orange">On/Off</button>
+        <br><button name="2" value="0" class="btn knop1 circular">On/Off</button>
         {% elif stand==[(0,)] %}
-        <button name="1" value="1" class="btn orange">On/Off</button>
+        <br><button name="2" value="1" class="btn knop1 circular">On/Off</button>
         {% endif %}
     </form>
-
-	</div>
+</div>
 {% endblock %}

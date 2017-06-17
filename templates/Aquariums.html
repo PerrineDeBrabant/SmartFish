@@ -1,37 +1,47 @@
-{% extends "base.html" %}
-{% block title %}
-    Aquariums
-{% endblock %}
-{% block Aquarium %}
-    class="current"
-{% endblock %}
-{% block body %}
-<div class="content3" >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aanmelden</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+</head>
+<body class="background">
+<div class="contentAquarium" >
 <br><h3>Aquarium</h3><br>
-Selecteer een bestaand aquarium<br><br>
-<select name="aquariums">
-    <option value="Tropical">Tropical</option>
-</select><br><br>
-<form>
+Selecteer een bestaand<br>aquarium<br><br>
+    <form method="post">
+<select name="aquarium">
+       {% for aquarium in aquaria %}#}
+            <option>{{ aquarium[0] }}</option>
+        {% endfor %}
+
+   </select><br><br>
+
 <p class="submit"><input type="submit" name="Selecteer" value="Selecteer"></p>
 </form>
-    <div class="AquariumOpties">
-<div class="AquariumToevoegen">
-    Voeg een aquarium toe<br><br>
- <form method="post" action="index.html">
-        <p><input type="text" name="ToevoegenAquarium" value="" placeholder="Naam"></p>
+
+{#<div class="AquariumToevoegen">#}
+{#    Voeg een aquarium toe<br><br>#}
+{# <form method="post" action="index.html">#}
+{#        <p><input type="text" name="ToevoegenAquarium" value="" placeholder="Naam"></p>#}
 {#       <p><input type="text" name="ip" value="" placeholder="Ip-adres"></p>#}
-        <p class="submit"><input type="submit" name="VoegToe" value="Voeg Toe"></p>
- </form><br></div>
-    <div class="AquariumVerwijderen">
-    Verwijder een aquarium<br><br>
-        <select name="aquariums">
-            <option value="Tropical">Tropical</option>
-        </select><br><br>
-        <form>
-        <p class="submit"><input type="submit" name="Verwijder" value="Verwijder"></p>
-        </form>
+{#        <p class="submit"><input type="submit" name="VoegToe" value="Voeg Toe"></p>#}
+{# </form><br></div>#}
+{#    <div class="AquariumVerwijderen">#}
+{#    Verwijder een aquarium<br><br>#}
+{#        <select name="aquariums">#}
+{#            <option value="Tropical">Tropical</option>#}
+{#        </select><br><br>#}
+{#        <form>#}
+{#        <p class="submit"><input type="submit" name="Verwijder" value="Verwijder"></p>#}
+{#        </form>#}
+{#</div>#}
+        Opties Aquarium<br><br>
+          <a href="{{ url_for('home') }}" class="btn knop1 circular">Voeg toe</a><br><br>
+         <a href="{{ url_for('home') }}" class="btn knop1 circular">Verwijder</a><br><br>
 </div>
-</div>
-</div>
-{% endblock %}
+
+</body>
+</html>
+
