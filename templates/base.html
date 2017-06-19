@@ -9,7 +9,7 @@
 	<meta name="author" content="Perrine De Brabant">
 
 	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Smartfish - {% block title %}
     {% endblock %}
     </title>
@@ -32,7 +32,7 @@
 				<li><a href="{{ url_for('temperatuur')}}" {% block Temperatuur %}{% endblock %}>Temperatuur</a></li>
 				<li><a href="{{ url_for('aquariums')}}" {% block Aquarium%}{% endblock %}>Aquarium</a> </li>
                 <li><a href="{{ url_for('instellingen')}}" {% block Instellingen%}{% endblock %}>Instellingen</a> </li>
-                <li><a href="{{ url_for('onboarding')}}" >Logout</a> </li>
+                <li><a href="{{ url_for('afmelden')}}" >Logout</a> </li>
 
 			</ul>
 
@@ -59,6 +59,7 @@
 					<a href="Temperatuur.html">Temperatuur</a>
 					<a href="Filter.html">Filter</a>
                     <a href="Aquariums.html">Aquarium</a>
+                    <a href="Gebruiker.html">instellingen</a>
 				</p>
 
 				<p>Perrine De Brabant &copy; 2017<br> Wij zijn niet verantwoordelijk voor gebeurlijke ongevallen of incidenten.</p>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aanmelden</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+</head>
+<body class="background">
+<div class="contentAquarium" >
+<br><h3>Aquarium</h3><br>
+Selecteer een bestaand<br>aquarium<br><br>
+    <form method="post">
+<select name="aquarium">
+       {% for aquarium in aquaria %}#}
+            <option>{{ aquarium[0] }}</option>
+        {% endfor %}
+
+   </select><br><br>
+
+<p class="submit"><input type="submit" name="Selecteer" value="Selecteer"></p>
+</form>
+</div>
+</body>
+</html>

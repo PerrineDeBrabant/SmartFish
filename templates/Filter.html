@@ -10,17 +10,17 @@
 	<h3>Filter</h3><br><br>
 
 	<img src="/static/images/bubbles.png" height="436" width="600"/><br><br>
-		 toestand<br><br>
+		 <h3>Toestand</h3><br><br>
 		{% if stand==[(1,)] %}
             AAN
         {% elif stand==[(0,)] %}
             UIT
-        {% endif %}
+        {% endif %}<br><br>
     <form method="post">
         {% if stand==[(1,)] %}
-        <button name="1" value="0" class="btn orange">On/Off</button>
+        <button name="1" value="0" class="btn knop1 circular">On/Off</button>
         {% elif stand==[(0,)] %}
-        <button name="1" value="1" class="btn orange">On/Off</button>
+        <button name="1" value="1" class="btn knop1 circular">On/Off</button>
         {% endif %}
     </form>
 

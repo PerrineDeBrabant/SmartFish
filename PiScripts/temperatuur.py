@@ -29,8 +29,9 @@
 #     else:
 #             print("Heater is uit")
 #             GPIO.output(heater,GPIO.LOW)
-
+import RPi.GPIO as GPIO
 import time
+from DbClass import DbClass
 class Temp_sensor():
     #id van one-wire sensor opzoeken
     sensor_file = '/sys/bus/w1/devices/28-0516a143eaff/w1_slave'
@@ -49,3 +50,14 @@ class Temp_sensor():
         temperatuur = temp.split("=")[1]
         temperatuur = float(temperatuur)/1000
         return temperatuur
+
+# try:
+#     while True:
+#
+#         Temp_sensor()
+#         db=DbClass()
+#
+#         time.sleep(1)
+#
+# except KeyboardInterrupt:
+#     GPIO.cleanup()

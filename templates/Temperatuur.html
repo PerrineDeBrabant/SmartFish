@@ -6,35 +6,186 @@
     class="current"
 {% endblock %}
 {% block body %}
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('datetime', 'Tijd');
+      data.addColumn('number', 'Graden celcius');
+      var dataArray = [];
+      {% for row in maand %}
+        dataArray.push([new Date({{ row[1]*1000 }}), {{ row[0] }}]);
+      {% endfor %}
+      data.addRows(dataArray);
+      var options = {
+        chart: {
+          title: 'Temperatuur',
+          subtitle: 'Laatste maand'
+        }, legend: {position: 'none'},
+          vAxis: { format:'####°C'},
+          series: {
+            0: { color: '#6f9654' }
+          }
+      };
+      var formatter = new google.visualization.NumberFormat({
+      fractionDigits: '2'
+        });
+        formatter.format(data, 1);
+      var chart = new google.charts.Line(document.getElementById('linechart_material_Temp'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+    </script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('datetime', 'Tijd');
+      data.addColumn('number', 'Graden celcius');
+      var dataArray = [];
+      {% for row in weekgraph %}
+        dataArray.push([new Date({{ row[1]*1000 }}), {{ row[0] }}]);
+      {% endfor %}
+      data.addRows(dataArray);
+      var options = {
+        chart: {
+          title: 'Temperatuur',
+          subtitle: 'Laatste week'
+        }, legend: {position: 'none'},
+          vAxis: { format:'####°C'},
+          series: {
+            0: { color: '#1c91c0' }
+          }
+      };
+      var formatter = new google.visualization.NumberFormat({
+      fractionDigits: '2'
+        });
+        formatter.format(data, 1);
+      var chart = new google.charts.Line(document.getElementById('linechart_material_Temp_Week'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+</script>
+   <script type="text/javascript">
+    google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('datetime', 'Tijd');
+      data.addColumn('number', 'Graden celcius');
+      var dataArray = [];
+      {% for row in daggraph %}
+        dataArray.push([new Date({{ row[1]*1000 }}), {{ row[0] }}]);
+      {% endfor %}
+      data.addRows(dataArray);
+      var options = {
+        chart: {
+          title: 'Temperatuur',
+          subtitle: 'Laatste dag'
+        }, legend: {position: 'none'},
+          vAxis: { format:'####°C'},
+          series: {
+            0: { color: '#43459d' }
+          }
+      };
+      var formatter = new google.visualization.NumberFormat({
+      fractionDigits: '2'
+        });
+        formatter.format(data, 1);
+      var chart = new google.charts.Line(document.getElementById('linechart_material_Temp_Dag'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+</script>
 <div class="container">
 <div class="Verwarming"><br>
     <h3>Verwarming</h3><br><br>
-    Huidige temperatuur: 20°C<br><br><br>
-    <div class="VerwarmingStatus">
-        <div class="fotoTemp"><br>
-            <img src="img/temprature.png" height="256" width="256"/>
-        </div>
-        <div class="infoTemp"><br>
-            Status verwarming<br><br>
-            AAN<br><br>
-        </div>
-    </div>
-
-</div>
-	<div class="TempAanpassen"><br>
-	<h3>Temperatuur aanpassen</h3><br><br>(
-     Gewenste temperatuur: 23°C<br><br><br>
+    Huidige temperatuur: {{ HuidigeTemp }}°C<br><br><br>
     <div class="VerwarmingStatus">
         <div class="fotoTemp"><br>
             <img src="/static/images/temprature.png" height="256" width="256"/>
         </div>
         <div class="infoTemp"><br>
-            <form>
-            <input type="text" name="temperatuur"><br><br>
-            AAN<br><br>
+            Status verwarming<br><br>
+            {% if Heater==(1,) %}
+            AAN
+            {% elif Heater==(0,) %}
+                UIT
+            {% endif %}<br><br>
+        </div>
+    </div>
+
+</div>
+	<div class="TempAanpassen"><br>
+	<h3>Temperatuur aanpassen</h3><br><br>
+     Gewenste temperatuur: {{ Gewenst }}°C<br><br><br>
+    <div class="VerwarmingStatus">
+
+        <div class="infoTemp"><br>
+            <form method="post">
+            <input type="text" name="temperatuur" placeholder="Gewenste temperatuur">°C<br><br>
+                <button class="btn knop1 circular">Pas aan</button>
             </form>
         </div>
+        <br>
 	</div>
 </div>
 </div>
+    <div class="grafieken"><br>
+        <h3>Grafieken</h3><br>
+    <div id="linechart_material_Temp" style="width: 70%; height: 300px; margin: auto"></div><br>
+    <div id="linechart_material_Temp_Week" style="width: 70%; height: 300px; margin: auto"></div><br>
+    <div id="linechart_material_Temp_Dag" style="width: 70%; height: 300px; margin: auto"></div>
+</div>
+
+{#<main class="mdl-layout__content mdl-color--grey-100">#}
+{#<div class="mdl-grid weather-content">#}
+{#          <div class="weather-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">#}
+{#              <div id="linechart_material_Temp_Dag" style="width: 100%; height: 500px"></div>#}
+{#              <div id="linechart_material_Temp_Week" style="width: 100%; height: 500px"></div>#}
+{#              <div id="linechart_material_Temp" style="width: 100%; height: 500px"></div>#}
+{##}
+{#          </div>#}
+{#          <div class="weather-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">#}
+{#            <div class="weather-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">#}
+{#              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">#}
+{#                    <div class="card">#}
+{#                      <h1>{{ dag[0] }}°C</h1>#}
+{#                     </div>#}
+{#              </div>#}
+{#              <div class="mdl-card__actions mdl-card--border">#}
+{#                <h5>Dag gemiddelde</h5>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="weather-separator mdl-cell--1-col"></div>#}
+{##}
+{#            <div class="weather-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">#}
+{#              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">#}
+{#                <div class="card">#}
+{#                      <h1>{{ week[0] }}°C</h1>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="mdl-card__actions mdl-card--border">#}
+{#                <h5>Week gemiddelde</h5>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <div class="weather-separator mdl-cell--1-col"></div>#}
+{##}
+{#            <div class="weather-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">#}
+{#              <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">#}
+{#                <div class="card">#}
+{#                      <h1>{{ maandAvg[0] }}°C</h1>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="mdl-card__actions mdl-card--border">#}
+{#                <h5>Maand gemiddelde</h5>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{##}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</main>#}
 {% endblock %}

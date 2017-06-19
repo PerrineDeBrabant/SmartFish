@@ -1,7 +1,7 @@
-import RPi.GPIO as GPIO
 import time
 
-# -*- coding: uft-8 -*-
+import RPi.GPIO as GPIO
+
 from PiScripts.temperatuur import Temp_sensor
 
 RS = 16
@@ -82,24 +82,3 @@ def InitLCD():
 
 GPIO.cleanup()
 
-try:
-    while True:
-        Setup()
-        InitLCD()
-
-        temperatuur = str(Temp_sensor().temp())
-        SendString("Het is " + temperatuur + chr(223) + "C")
-
-        time.sleep(10)
-
-        if Temp_sensor().temp() <= 26.0:
-            print("Heater is aan")
-            GPIO.output(heater, GPIO.LOW)
-            time.sleep(30)
-        else:
-            print("Heater is uit")
-            GPIO.output(heater, GPIO.HIGH)
-
-
-except KeyboardInterrupt:
-    GPIO.cleanup()

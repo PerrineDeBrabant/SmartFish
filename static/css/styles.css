@@ -190,7 +190,7 @@ li {
 
 
 /*Verlichting*/
-.colorpicker,.Schakelaar,.Filter,.contentVissen,.ToevoegenVis,.VerwijderenVis,.VerlichtingKeuze{
+.colorpicker,.Schakelaar,.Filter,.contentVissen,.ToevoegenVis,.VerwijderenVis,.VerlichtingKeuze,.Gebruiker{
 	background-color: #6699FF;
 	width: 400px;
 	height: 280px;
@@ -222,6 +222,11 @@ li {
 
 	border: 1px black solid;
 }
+/*Instellingen*/
+.Gebruiker{
+	font-size: 16px;
+}
+
 /*Vissen*/
 .contentVissen{
 	width: 400px;
@@ -270,10 +275,24 @@ li {
 	width: 50%;
 }
 
+.infoTemp{
+	align-content: center;
+	margin: auto;
+	text-align: center;
+}
+
 /*Filter*/
 .Filter img{
 	height: 22%;
-	width: 14%;
+	width: 12%;
+}
+
+/*Temperatuur*/
+.grafieken{
+	align-content: center;
+	margin: auto;
+	text-align: center;
+
 }
 /*CONTENT*/
 
