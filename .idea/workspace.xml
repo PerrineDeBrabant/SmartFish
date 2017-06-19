@@ -67,6 +67,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="VerwijderRechten.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/VerwijderRechten.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="project.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="718">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
@@ -136,16 +146,6 @@
               <folding>
                 <element signature="e#1#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -214,7 +214,6 @@
         <option value="$PROJECT_DIR$/templates/error/500.html" />
         <option value="$PROJECT_DIR$/templates/error/login_error.html" />
         <option value="$PROJECT_DIR$/templates/GeenToegang2.html" />
-        <option value="$PROJECT_DIR$/templates/VerwijderRechten.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fad62036-df9a-4c4f-b1cc-e88a0e2b04ec/console_1.sql" />
         <option value="dbtable:/fdf26e77/efc0ffc5-2377-44e4-8aa1-5c03e2688a63/project1.gebruiker" />
         <option value="$PROJECT_DIR$/SmartFish.py" />
@@ -229,6 +228,7 @@
         <option value="$PROJECT_DIR$/FilterEnVerlichting.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/project.py" />
+        <option value="$PROJECT_DIR$/templates/VerwijderRechten.html" />
       </list>
     </option>
   </component>
@@ -1043,14 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/VerwijderRechten.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DbClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1209,11 +1201,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="718">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/VerwijderRechten.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
